@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Data Deletion | RifaPlus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; line-height: 1.6; }
+    header { display: flex; justify-content: space-between; align-items: center; }
+    select { padding: 6px; }
+    h1, h2 { color: #333; }
+    footer { margin-top: 40px; font-size: 0.9em; color: #555; }
+    .box { background: #f5f5f5; padding: 15px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="title"></h1>
+  <select id="langSwitcher">
+    <option value="es">Español</option>
+    <option value="en">English</option>
+  </select>
+</header>
+
+<p id="updated"></p>
+
+<section id="content"></section>
+
+<footer>
+  <p>© 2025 RifaPlus</p>
+</footer>
+
+<script>
+const lang = new URLSearchParams(window.location.search).get("lang") || "es";
+document.getElementById("langSwitcher").value = lang;
+
+document.getElementById("langSwitcher").addEventListener("change", e => {
+  window.location.search = "?lang=" + e.target.value;
+});
+
+const texts = {
+  es: {
+    title: "Eliminación de datos de usuario",
+    updated: "Última actualización: 23 de diciembre de 2025",
+    content: `
+<h2>1. Eliminación de datos</h2>
+<p>RifaPlus permite a los usuarios solicitar y ejecutar la eliminación completa de sus datos personales.</p>
+
+<h2>2. Cómo eliminar tus datos</h2>
+<div class="box">
+  <ol>
+    <li>Abre la aplicación <strong>RifaPlus</strong></li>
+    <li>Ve a la sección <strong>Perfil</strong></li>
+    <li>Selecciona <strong>Eliminar cuenta</strong></li>
+    <li>Confirma la acción</li>
+  </ol>
+</div>
+
+<h2>3. Qué datos se eliminan</h2>
+<ul>
+  <li>Información de autenticación (correo, nombre, foto)</li>
+  <li>Datos asociados a tu cuenta</li>
+  <li>Identificadores internos</li>
+</ul>
+
+<h2>4. Tiempo de procesamiento</h2>
+<p>La eliminación se realiza de forma inmediata o en un plazo máximo de 48 horas.</p>
+
+<h2>5. Contacto alternativo</h2>
+<p>Si no puedes acceder a la app, puedes solicitar la eliminación escribiendo a:</p>
+<p><strong>Email:</strong> nevitslabs@gmail.com</p>
+`
+  },
+  en: {
+    title: "User Data Deletion",
+    updated: "Last updated: December 23, 2025",
+    content: `
+<h2>1. Data deletion</h2>
+<p>RifaPlus allows users to request and perform complete deletion of their personal data.</p>
+
+<h2>2. How to delete your data</h2>
+<div class="box">
+  <ol>
+    <li>Open the <strong>RifaPlus</strong> app</li>
+    <li>Go to the <strong>Profile</strong> section</li>
+    <li>Select <strong>Delete account</strong></li>
+    <li>Confirm the action</li>
+  </ol>
+</div>
+
+<h2>3. Data that is deleted</h2>
+<ul>
+  <li>Authentication data (email, name, photo)</li>
+  <li>Account-related information</li>
+  <li>Internal identifiers</li>
+</ul>
+
+<h2>4. Processing time</h2>
+<p>Data deletion is processed immediately or within a maximum of 48 hours.</p>
+
+<h2>5. Alternative contact</h2>
+<p>If you cannot access the app, you may request data deletion by contacting:</p>
+<p><strong>Email:</strong> nevitslabs@gmail.com</p>
+`
+  }
+};
+
+document.getElementById("title").innerText = texts[lang].title;
+document.getElementById("updated").innerText = texts[lang].updated;
+document.getElementById("content").innerHTML = texts[lang].content;
+</script>
+
+</body>
+</html>
