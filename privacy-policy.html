@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Privacy Policy – RifaPlus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    select {
+      padding: 6px;
+    }
+    h1, h2 {
+      color: #111;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="title"></h1>
+  <select id="languageSwitcher">
+    <option value="en">English</option>
+    <option value="es">Español</option>
+  </select>
+</header>
+
+<p id="lastUpdated"></p>
+
+<section id="content"></section>
+
+<footer>
+  <p>© RifaPlus</p>
+</footer>
+
+<script>
+const content = {
+  en: `
+  <h2>1. Introduction</h2>
+  <p>This Privacy Policy explains how RifaPlus ("we", "our", or "us") collects, uses, stores, and protects personal information when you use our mobile application.</p>
+
+  <h2>2. Information We Collect</h2>
+  <p>We collect only the information necessary to provide the service:</p>
+  <ul>
+    <li>Account information (name, email, profile picture)</li>
+    <li>Authentication data from third-party providers (Google, Facebook, Apple)</li>
+    <li>User-generated content related to raffles</li>
+    <li>Technical data such as device type, operating system, and error logs</li>
+  </ul>
+  <p>We do not collect sensitive personal data.</p>
+
+  <h2>3. Authentication Providers</h2>
+  <p>You may sign in using third-party authentication providers such as Google, Facebook, or Apple. These providers manage their own privacy practices according to their policies.</p>
+
+  <h2>4. How We Use Your Information</h2>
+  <ul>
+    <li>To provide and maintain the application</li>
+    <li>To authenticate users</li>
+    <li>To ensure security and prevent fraud</li>
+    <li>To improve app functionality</li>
+    <li>To comply with legal obligations</li>
+  </ul>
+
+  <h2>5. Advertising</h2>
+  <p>RifaPlus displays advertisements provided by Google Mobile Ads. Google may collect limited device information according to its own privacy policies.</p>
+
+  <h2>6. Data Sharing</h2>
+  <p>We do not sell or rent personal data. Information may only be shared with trusted service providers strictly necessary for app operation.</p>
+
+  <h2>7. Data Retention</h2>
+  <p>Your data is retained while your account remains active. Once you delete your account, your personal data is permanently removed.</p>
+
+  <h2>8. Data Security</h2>
+  <p>We implement reasonable technical and organizational measures to protect your data. However, no system is completely secure.</p>
+
+  <h2>9. User Rights</h2>
+  <p>Depending on your location, you may have rights including access, correction, deletion, and data portability.</p>
+
+  <h2>10. Data Deletion</h2>
+  <p>You can delete your account and all associated data directly from the app. If you require assistance, contact us at nevitslabs@gmail.com.</p>
+
+  <h2>11. International Use</h2>
+  <p>The app is available globally. By using it, you consent to the processing of your data in accordance with this policy.</p>
+
+  <h2>12. Updates</h2>
+  <p>This policy may be updated from time to time. Changes will be reflected by an updated revision date.</p>
+
+  <h2>13. Contact</h2>
+  <p>Email: nevitslabs@gmail.com</p>
+  `,
+
+  es: `
+  <h2>1. Introducción</h2>
+  <p>Esta Política de Privacidad explica cómo RifaPlus ("nosotros") recopila, utiliza, almacena y protege la información personal cuando usas nuestra aplicación móvil.</p>
+
+  <h2>2. Información que recopilamos</h2>
+  <ul>
+    <li>Datos de cuenta (nombre, correo electrónico, foto de perfil)</li>
+    <li>Información de autenticación mediante Google, Facebook o Apple</li>
+    <li>Contenido generado por el usuario relacionado con rifas</li>
+    <li>Datos técnicos del dispositivo y registros de errores</li>
+  </ul>
+  <p>No recopilamos datos personales sensibles.</p>
+
+  <h2>3. Proveedores de autenticación</h2>
+  <p>La app permite iniciar sesión mediante proveedores externos como Google, Facebook y Apple, quienes gestionan sus propios sistemas de privacidad.</p>
+
+  <h2>4. Uso de la información</h2>
+  <ul>
+    <li>Operar y mantener la aplicación</li>
+    <li>Autenticar usuarios</li>
+    <li>Garantizar la seguridad</li>
+    <li>Mejorar la experiencia del usuario</li>
+    <li>Cumplir obligaciones legales</li>
+  </ul>
+
+  <h2>5. Publicidad</h2>
+  <p>Mostramos anuncios mediante Google Mobile Ads. Google puede recopilar información limitada conforme a sus políticas.</p>
+
+  <h2>6. Compartición de datos</h2>
+  <p>No vendemos ni alquilamos datos personales. Solo se comparten datos con proveedores técnicos necesarios para el funcionamiento de la app.</p>
+
+  <h2>7. Conservación de datos</h2>
+  <p>Los datos se conservan mientras la cuenta esté activa. Al eliminar la cuenta, los datos se borran permanentemente.</p>
+
+  <h2>8. Seguridad</h2>
+  <p>Aplicamos medidas razonables de seguridad, aunque ningún sistema es 100% seguro.</p>
+
+  <h2>9. Derechos del usuario</h2>
+  <p>Según tu ubicación, puedes ejercer derechos de acceso, rectificación, eliminación y portabilidad.</p>
+
+  <h2>10. Eliminación de datos</h2>
+  <p>Puedes eliminar tu cuenta y datos desde la app. También puedes escribirnos a nevitslabs@gmail.com.</p>
+
+  <h2>11. Uso internacional</h2>
+  <p>La aplicación está disponible a nivel mundial. Al usarla, aceptas este tratamiento de datos.</p>
+
+  <h2>12. Cambios</h2>
+  <p>Podemos actualizar esta política en cualquier momento. La fecha reflejará la última modificación.</p>
+
+  <h2>13. Contacto</h2>
+  <p>Email: nevitslabs@gmail.com</p>
+  `
+};
+
+const params = new URLSearchParams(window.location.search);
+let lang = params.get("lang") || "en";
+
+document.getElementById("languageSwitcher").value = lang;
+document.getElementById("content").innerHTML = content[lang];
+document.getElementById("title").innerText = lang === "es" ? "Política de Privacidad – RifaPlus" : "Privacy Policy – RifaPlus";
+document.getElementById("lastUpdated").innerText =
+  lang === "es"
+    ? "Última actualización: 8 de enero de 2026"
+    : "Last updated: January 8, 2026";
+
+document.getElementById("languageSwitcher").addEventListener("change", e => {
+  const newLang = e.target.value;
+  window.location.search = "?lang=" + newLang;
+});
+</script>
+
+</body>
+</html>
