@@ -1,163 +1,137 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>RifaPlus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RifaPlus – Digital Raffle Manager</title>
-  <meta name="description" content="RifaPlus helps you create and manage digital raffles easily. Organize tickets, track numbers, and share results from your phone." />
+
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #3b82f6;
-    }
-    * { box-sizing: border-box; }
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, sans-serif;
-      background: linear-gradient(180deg, #020617, var(--bg));
-      color: var(--text);
+      background: #f7f7f7;
+      color: #333;
     }
     header {
-      padding: 24px;
+      background: #111;
+      color: white;
+      padding: 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
+      justify-content: space-between;
     }
     header img {
-      height: 48px;
+      height: 50px;
     }
-    .lang {
-      font-size: 14px;
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      margin-left: 10px;
+      cursor: pointer;
+      font-weight: bold;
     }
-    .lang a {
-      color: var(--muted);
-      margin-left: 12px;
-      text-decoration: none;
-    }
-    .lang a.active { color: var(--text); font-weight: 600; }
-
     main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 64px 24px;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
     }
-    .hero {
-      text-align: center;
-      margin-bottom: 64px;
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 16px;
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-    .hero p {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
     footer {
-      border-top: 1px solid rgba(255,255,255,.08);
-      margin-top: 80px;
-      padding: 32px 24px;
+      background: #222;
+      color: #ccc;
+      padding: 20px;
       text-align: center;
-      font-size: 14px;
-      color: var(--muted);
+      font-size: 0.9rem;
     }
     footer a {
-      color: var(--muted);
-      text-decoration: none;
+      color: #ccc;
       margin: 0 8px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <img src="logo-dark.png" alt="RifaPlus logo" />
-  <div class="lang">
-    <a href="#" class="active">ES</a>
-    <a href="#" onclick="switchLang('en')">EN</a>
-  </div>
+  <img src="logo-dark.png" alt="RifaPlus Logo">
+  <nav>
+    <button data-lang-btn="en">EN</button>
+    <button data-lang-btn="es">ES</button>
+  </nav>
 </header>
 
 <main>
-  <section class="hero" id="hero-es">
-    <h1>Organiza tus rifas de forma digital</h1>
+  <section data-lang="en">
+    <h1>RifaPlus</h1>
     <p>
-      RifaPlus es una aplicación móvil que te permite crear, gestionar y compartir rifas
-      de manera sencilla. Olvídate de los talonarios físicos y del desorden.
+      RifaPlus is a digital platform that helps you create, manage, and organize raffles easily and securely.
+    </p>
+    <p>
+      Organize raffles digitally, share tickets, and keep full control without paper or spreadsheets.
     </p>
   </section>
 
-  <section class="hero" id="hero-en" style="display:none">
-    <h1>Manage your raffles digitally</h1>
+  <section data-lang="es" style="display:none">
+    <h1>RifaPlus</h1>
     <p>
-      RifaPlus is a mobile app that helps you create, manage, and share digital raffles
-      easily. No paper tickets, no spreadsheets, no hassle.
+      RifaPlus es una plataforma digital que te ayuda a crear, gestionar y organizar rifas de forma sencilla y segura.
     </p>
-  </section>
-
-  <section class="features">
-    <div class="card">
-      <h3>🎟️ Talonarios digitales</h3>
-      <p>Crea rifas ilimitadas y controla números disponibles, reservados o vendidos.</p>
-    </div>
-    <div class="card">
-      <h3>📤 Compartir fácilmente</h3>
-      <p>Genera imágenes de tus rifas y compártelas con clientes o amigos.</p>
-    </div>
-    <div class="card">
-      <h3>📱 Funciona offline y online</h3>
-      <p>Usa la app sin conexión y sincroniza tus datos cuando inicies sesión.</p>
-    </div>
-    <div class="card">
-      <h3>🔐 Inicio de sesión seguro</h3>
-      <p>Autenticación mediante Google o correo electrónico para proteger tu información.</p>
-    </div>
+    <p>
+      Organiza rifas de manera digital, comparte boletos y mantén el control sin papel ni hojas de cálculo.
+    </p>
   </section>
 </main>
 
 <footer>
-  <div>
-    <a href="privacy-policy.html">Privacy Policy</a> ·
-    <a href="terms-of-use.html">Terms of Use</a> ·
-    <a href="data-deletion.html">Data Deletion</a>
-  </div>
-  <p>© 2026 RifaPlus · Developed by NevitsLabs</p>
+  <a href="privacy-policy.html">Privacy Policy</a> |
+  <a href="terms-of-use.html">Terms of Use</a> |
+  <a href="data-deletion.html">Data Deletion</a>
 </footer>
 
 <script>
-  function switchLang(lang) {
-    document.getElementById('hero-es').style.display = lang === 'es' ? 'block' : 'none';
-    document.getElementById('hero-en').style.display = lang === 'en' ? 'block' : 'none';
+  const sections = document.querySelectorAll('[data-lang]');
+  const buttons = document.querySelectorAll('[data-lang-btn]');
+
+  function setLanguage(lang, updateUrl = true) {
+    sections.forEach(section => {
+      section.style.display =
+        section.getAttribute('data-lang') === lang ? 'block' : 'none';
+    });
+
+    if (updateUrl) {
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState({}, '', url);
+    }
   }
+
+  // Detect language from URL
+  const params = new URLSearchParams(window.location.search);
+  const langFromUrl = params.get('lang');
+
+  if (langFromUrl === 'es' || langFromUrl === 'en') {
+    setLanguage(langFromUrl, false);
+  } else {
+    setLanguage('en', false); // default
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setLanguage(btn.getAttribute('data-lang-btn'));
+    });
+  });
 </script>
 
 </body>
