@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>RifaPlus – Digital Raffle Manager</title>
-
-  <meta
-    name="description"
-    content="RifaPlus helps you create and manage digital raffles easily. Organize tickets, track numbers, and share results from your phone."
-  />
+  <meta name="description" content="RifaPlus lets you create, manage, and share digital raffles easily from your phone." />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="logo.ico" />
+  <link rel="icon" href="logo.ico" type="image/x-icon" />
 
   <style>
     :root {
@@ -23,37 +19,35 @@
       --accent: #3b82f6;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Inter, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
       background: linear-gradient(180deg, #020617, var(--bg));
       color: var(--text);
     }
 
     header {
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
     }
 
     header img {
       height: 48px;
     }
 
-    .lang {
-      font-size: 14px;
-    }
-
     .lang a {
       color: var(--muted);
       margin-left: 12px;
       text-decoration: none;
+      font-size: 14px;
     }
 
     .lang a.active {
@@ -69,7 +63,7 @@
 
     .hero {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 64px;
     }
 
     .hero h1 {
@@ -81,22 +75,11 @@
       font-size: 18px;
       color: var(--muted);
       max-width: 720px;
-      margin: 0 auto;
+      margin: 0 auto 32px;
     }
 
-    .store-btn {
-      margin-top: 32px;
-    }
-
-    .store-btn a {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 14px 24px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 10px 30px rgba(59,130,246,.35);
+    .store-badge img {
+      height: 60px;
     }
 
     .features {
@@ -114,8 +97,7 @@
     }
 
     .card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
+      margin: 0 0 8px;
     }
 
     .card p {
@@ -157,34 +139,30 @@
   <section class="hero" id="hero-es">
     <h1>Organiza tus rifas de forma digital</h1>
     <p>
-      RifaPlus es una aplicación móvil que te permite crear, gestionar y
-      compartir rifas fácilmente. Olvídate del papel y mantén todo bajo control.
+      RifaPlus es una aplicación móvil que te permite crear, gestionar y compartir rifas
+      fácilmente. Olvídate de los talonarios físicos y del desorden.
     </p>
 
-    <a href="https://play.google.com/store/apps/details?id=com.nevitslabs.tools.rifaplus" target="_blank">
-      <img
-        src="google-play-badge-es.png"
-        alt="Disponible en Google Play"
-        style="height: 60px;"
-      />
-    </a>
+    <div class="store-badge">
+      <a href="https://play.google.com/store/apps/details?id=com.nevitslabs.tools.rifaplus" target="_blank" rel="noopener">
+        <img src="google-play-badge-es.png" alt="Disponible en Google Play">
+      </a>
+    </div>
   </section>
 
   <!-- HERO EN -->
   <section class="hero" id="hero-en" style="display:none">
     <h1>Manage your raffles digitally</h1>
     <p>
-      RifaPlus is a mobile app that lets you create, manage, and share digital
-      raffles easily. No paper tickets, no spreadsheets, no hassle.
+      RifaPlus is a mobile app that helps you create, manage, and share digital raffles
+      easily. No paper tickets, no spreadsheets, no hassle.
     </p>
 
-    <a href="https://play.google.com/store/apps/details?id=com.nevitslabs.tools.rifaplus" target="_blank">
-      <img
-        src="google-play-badge-en.png"
-        alt="Get it on Google Play"
-        style="height: 60px;"
-      />
-    </a>
+    <div class="store-badge">
+      <a href="https://play.google.com/store/apps/details?id=com.nevitslabs.tools.rifaplus" target="_blank" rel="noopener">
+        <img src="google-play-badge-en.png" alt="Get it on Google Play">
+      </a>
+    </div>
   </section>
 
   <!-- FEATURES ES -->
@@ -194,36 +172,36 @@
       <p>Crea rifas ilimitadas y controla números disponibles, reservados o vendidos.</p>
     </div>
     <div class="card">
-      <h3>📤 Compartir fácilmente</h3>
-      <p>Genera imágenes de tus rifas y compártelas con clientes o amigos.</p>
+      <h3>🖼️ Tickets en imagen</h3>
+      <p>Genera imágenes claras y profesionales para compartir tus rifas.</p>
     </div>
     <div class="card">
-      <h3>📱 Funciona offline y online</h3>
-      <p>Registra información sin conexión y sincroniza cuando inicies sesión.</p>
+      <h3>📱 Offline y online</h3>
+      <p>Funciona sin conexión y sincroniza tus datos al iniciar sesión.</p>
     </div>
     <div class="card">
-      <h3>🔐 Inicio de sesión seguro</h3>
-      <p>Accede con Google o correo electrónico y protege tu información.</p>
+      <h3>🔐 Acceso seguro</h3>
+      <p>Inicio de sesión mediante Google o correo electrónico.</p>
     </div>
   </section>
 
   <!-- FEATURES EN -->
   <section class="features" id="features-en" style="display:none">
     <div class="card">
-      <h3>🎟️ Digital raffle books</h3>
-      <p>Create unlimited raffles and manage available, reserved, or sold numbers.</p>
+      <h3>🎟️ Digital tickets</h3>
+      <p>Create unlimited raffles and track available, reserved, or sold numbers.</p>
     </div>
     <div class="card">
-      <h3>📤 Easy sharing</h3>
-      <p>Generate raffle images and share them with clients or friends.</p>
+      <h3>🖼️ Image sharing</h3>
+      <p>Generate clear raffle images to share with participants.</p>
     </div>
     <div class="card">
-      <h3>📱 Offline & online</h3>
-      <p>Work offline and sync your data when you log in.</p>
+      <h3>📱 Offline support</h3>
+      <p>Use the app offline and sync when you log in.</p>
     </div>
     <div class="card">
       <h3>🔐 Secure login</h3>
-      <p>Sign in using Google or email to keep your data safe.</p>
+      <p>Authentication via Google or email.</p>
     </div>
   </section>
 
@@ -239,22 +217,17 @@
 </footer>
 
 <script>
-  function getLangFromURL() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("lang") === "en" ? "en" : "es";
-  }
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get("lang") || "es";
 
-  function applyLang(lang) {
-    document.getElementById("hero-es").style.display = lang === "es" ? "block" : "none";
-    document.getElementById("hero-en").style.display = lang === "en" ? "block" : "none";
-    document.getElementById("features-es").style.display = lang === "es" ? "grid" : "none";
-    document.getElementById("features-en").style.display = lang === "en" ? "grid" : "none";
+  document.getElementById("hero-es").style.display = lang === "es" ? "block" : "none";
+  document.getElementById("features-es").style.display = lang === "es" ? "grid" : "none";
 
-    document.getElementById("lang-es").classList.toggle("active", lang === "es");
-    document.getElementById("lang-en").classList.toggle("active", lang === "en");
-  }
+  document.getElementById("hero-en").style.display = lang === "en" ? "block" : "none";
+  document.getElementById("features-en").style.display = lang === "en" ? "grid" : "none";
 
-  applyLang(getLangFromURL());
+  document.getElementById("lang-es").classList.toggle("active", lang === "es");
+  document.getElementById("lang-en").classList.toggle("active", lang === "en");
 </script>
 
 </body>
